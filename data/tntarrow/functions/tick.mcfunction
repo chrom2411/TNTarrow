@@ -8,7 +8,7 @@ execute as @e[type=arrow,tag=tntarrow] at @s run function tntarrow:homing_tnt
 
 # explode TNT which landed in
 # when hit ground or wall
-execute as @e[type=arrow,tag=tntarrow,nbt={inGround:1b}] store result entity @e[type=tnt,tag=tntarrow,sort=nearest,limit=1] Fuse short 0 run data get entity @s inGround
+execute as @e[type=arrow,tag=tntarrow,nbt={inGround:1b}] at @s store result entity @e[type=tnt,tag=tntarrow,sort=nearest,limit=1] Fuse short 0 run data get entity @s inGround
 kill @e[type=arrow,tag=tntarrow,nbt={inGround:1b}]
 # when hit an entity
 execute as @e[type=tnt,tag=tntarrow] at @s unless entity @e[type=arrow,tag=tntarrow,distance=..1] store result entity @s Fuse short 0 run data get entity @s Fuse
