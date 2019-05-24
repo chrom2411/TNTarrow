@@ -4,7 +4,7 @@ scoreboard objectives add shoot_arrow minecraft.used:minecraft.bow
 execute as @a[scores={shoot_arrow=1..},nbt={Inventory:[{Slot:-106b,id:"minecraft:tnt"}]}] at @s run function tntarrow:arrow2tnt
 
 # homing TNT
-execute as @e[type=arrow,tag=tntarrow] at @s run teleport @e[type=tnt,tag=tntarrow,sort=nearest,limit=1] @s
+execute as @e[type=arrow,tag=tntarrow] at @s run function tntarrow:homing_tnt
 
 # explode TNT which landed in
 # when hit ground or wall
